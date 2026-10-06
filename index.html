@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calcola quanto ti resta davvero da una vendita Etsy: commissioni, IVA sui servizi, costi, sconti e Offsite Ads. Gratuito, senza registrazione.">
+  <meta name="theme-color" content="#f7f5f0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calcolatore margine Etsy Italia: quanto ti resta? | Margine Etsy</title>
+  <meta property="og:title" content="Quanto ti resta da una vendita Etsy? Calcolalo">
+  <meta property="og:description" content="Stima commissioni e margine del tuo prossimo ordine Etsy, gratis e senza registrazione.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Margine Etsy Italia","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"it"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Il risultato è il mio guadagno netto?","acceptedAnswer":{"@type":"Answer","text":"No. È il ricavo dell'ordine meno le commissioni stimate e i costi inseriti. Non include imposte sul reddito, contributi o il valore del lavoro."}},{"@type":"Question","name":"Perché il costo pubblicazione è modificabile?","acceptedAnswer":{"@type":"Answer","text":"Etsy pubblica la tariffa in dollari USA; il controvalore addebitato in euro dipende dal cambio e dall'estratto conto."}},{"@type":"Question","name":"Quando si applicano le Offsite Ads?","acceptedAnswer":{"@type":"Answer","text":"Solo sugli ordini attribuiti a una visita generata dalle inserzioni esterne di Etsy. La percentuale dipende dalle regole e dalla soglia di vendite del negozio."}}]}
+  </script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html" aria-label="Margine Etsy, home"><span class="brand-mark">m</span> margine<span class="brand-light">etsy</span></a><nav><a href="#guida">Come funziona</a><a href="#fonti">Fonti e ipotesi</a></nav></header>
+  <main>
+    <section class="hero"><div class="eyebrow"><span class="dot"></span> Calcolatore gratuito · Italia</div><h1>Una vendita.<br><em>Quanto ti resta?</em></h1><p class="intro">Prezzo e commissioni raccontano solo metà della storia. Inserisci i costi reali e vedi il margine stimato, prima di pubblicare o fare uno sconto.</p></section>
+    <section class="calculator" aria-label="Calcolatore margine Etsy">
+      <div class="inputs">
+        <div class="section-heading"><span class="step">01</span><div><h2>La vendita</h2><p>Importi dell'ordine in euro</p></div></div>
+        <div class="field-grid">
+          <label>Prezzo articolo <span class="control"><span>€</span><input id="price" type="number" min="0" step="0.01" value="32.00" inputmode="decimal"></span></label>
+          <label>Spedizione addebitata <span class="control"><span>€</span><input id="shipping" type="number" min="0" step="0.01" value="4.90" inputmode="decimal"></span></label>
+          <label>Confezione regalo <span class="control"><span>€</span><input id="gift" type="number" min="0" step="0.01" value="0" inputmode="decimal"></span></label>
+          <label>Sconto sul prodotto <span class="control"><input id="discount" type="number" min="0" max="100" step="1" value="0" inputmode="decimal"><span>%</span></span></label>
+        </div>
+        <div class="section-heading second"><span class="step">02</span><div><h2>I tuoi costi</h2><p>Quelli che spesso spariscono dai conti</p></div></div>
+        <div class="field-grid">
+          <label>Materiali / costo prodotto <span class="control"><span>€</span><input id="cogs" type="number" min="0" step="0.01" value="8.00" inputmode="decimal"></span></label>
+          <label>Spedizione che paghi <span class="control"><span>€</span><input id="postage" type="number" min="0" step="0.01" value="5.20" inputmode="decimal"></span></label>
+          <label>Imballaggio e altri costi <span class="control"><span>€</span><input id="other" type="number" min="0" step="0.01" value="1.00" inputmode="decimal"></span></label>
+          <label>Pubblicazione (stima €) <span class="control"><span>€</span><input id="listing" type="number" min="0" step="0.01" value="0.18" inputmode="decimal"></span><small>La tariffa Etsy è $0,20; converti in base al tuo estratto conto.</small></label>
+        </div>
+        <details class="advanced"><summary>Personalizza le commissioni e le imposte</summary>
+          <div class="field-grid advanced-grid">
+            <label>Commissione di transazione <span class="control"><input id="transaction" type="number" min="0" max="100" step="0.1" value="6.5" inputmode="decimal"><span>%</span></span></label>
+            <label>Elaborazione pagamento <span class="control"><input id="processing" type="number" min="0" max="100" step="0.1" value="4" inputmode="decimal"><span>%</span></span></label>
+            <label>Quota fissa pagamento <span class="control"><span>€</span><input id="fixed" type="number" min="0" step="0.01" value="0.30" inputmode="decimal"></span></label>
+            <label>Quota regolamentare <span class="control"><input id="regulatory" type="number" min="0" max="100" step="0.1" value="0.8" inputmode="decimal"><span>%</span></span><small>Imposta al valore indicato per il tuo account, se applicabile.</small></label>
+            <label>IVA sulle commissioni Etsy <span class="control"><input id="feeVat" type="number" min="0" max="100" step="1" value="22" inputmode="decimal"><span>%</span></span><small>Aliquota indicativa; personalizza in base alla fattura e alla detraibilità.</small></label>
+            <label>Offsite Ads <select id="offsite"><option value="0">Nessun ordine attribuito</option><option value="15">Ordine attribuito · 15%</option><option value="12">Ordine attribuito · 12%</option></select><small>Si applica solo agli ordini attribuiti alle inserzioni esterne.</small></label>
+          </div>
+          <label class="check"><input id="vatOnFees" type="checkbox" checked><span>Considera l'IVA sui servizi Etsy come costo</span></label>
+        </details>
+      </div>
+      <aside class="results" aria-live="polite">
+        <div class="result-label">TI RESTANO, STIMATI</div><div class="net" id="net">€ 0,00</div><div class="result-caption">dopo commissioni Etsy e costi inseriti</div>
+        <div class="margin-line"><span>Margine sul totale incassato</span><strong id="margin">0%</strong></div>
+        <div class="rule"></div>
+        <div class="break-even"><span>Prezzo articolo minimo per non perdere</span><strong id="breakEven">€ 0,00</strong></div>
+        <div class="fee-list" id="feeList"></div>
+        <button class="button" id="copy">Copia riepilogo</button><button class="share-link" id="share">Condividi questa stima ↗</button>
+        <p class="privacy-note">I calcoli avvengono nel tuo browser. I valori non vengono caricati o salvati.</p>
+      </aside>
+    </section>
+    <section class="guide" id="guida"><div class="eyebrow">Un conto più realistico</div><h2>Il prezzo è solo l'inizio.</h2><div class="guide-grid"><article><span>01 / INCASSO</span><h3>Parti dal totale dell'ordine</h3><p>Etsy applica varie commissioni anche su spedizione e confezione regalo. Un prezzo prodotto basso può nascondere costi più alti di quanto sembri.</p></article><article><span>02 / COSTI</span><h3>Conta quello che spendi</h3><p>Materiali, imballaggio e affrancatura sono costi reali. Inseriscili sopra per stimare il contributo che resta prima di imposte sul reddito e del valore del tuo tempo.</p></article><article><span>03 / SCENARI</span><h3>Prova uno sconto o un annuncio</h3><p>Attiva Offsite Ads solo per simulare un ordine attribuito. Confronta il risultato con e senza sconto per trovare il margine che vuoi proteggere.</p></article></div></section>
+    <section class="faq" id="fonti"><div><div class="eyebrow">Trasparenza prima di tutto</div><h2>Ipotesi e limiti</h2><p>È una stima orientativa per un singolo ordine. Non sostituisce il tuo estratto conto Etsy né un parere fiscale. Etsy può aggiornare le tariffe e alcune voci dipendono dal tuo negozio, dal paese e dall'ordine. Verifica sempre le commissioni effettive nella dashboard.</p><ul><li>Le percentuali predefinite sono modificabili.</li><li>L'IVA sui servizi Etsy può variare e la detraibilità dipende dalla situazione del venditore.</li><li>Imposte sul reddito, contributi, resi, conversione valutaria, Etsy Ads, spedizioni perse e costi di negozio non inclusi.</li><li>Il pareggio considera costi inseriti e commissioni percentuali; non include tasse sul reddito.</li></ul><p class="source-links">Fonti ufficiali: <a href="https://help.etsy.com/hc/en-us/articles/115014483627-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy" target="_blank" rel="noopener">tariffe e imposte Etsy</a>, <a href="https://help.etsy.com/hc/en-us/articles/115015628847-What-are-Payment-Processing-Fees-for-Selling-on-Etsy" target="_blank" rel="noopener">elaborazione pagamenti</a>, <a href="https://www.etsy.com/legal/fees/" target="_blank" rel="noopener">politica tariffe e Offsite Ads</a>. Verificate il 6 ottobre 2026.</p></div><div class="faq-card"><h3>Domande frequenti</h3><details><summary>Il risultato è il mio guadagno netto?</summary><p>No. È il ricavo dell'ordine meno le commissioni stimate e i costi che inserisci. Non include imposte sul reddito, contributi o il valore del tuo lavoro.</p></details><details><summary>Perché il costo pubblicazione è modificabile?</summary><p>Etsy pubblica la tariffa in dollari USA; il controvalore addebitato in euro dipende dal cambio e dal tuo estratto conto.</p></details><details><summary>Quando si applicano le Offsite Ads?</summary><p>Solo sugli ordini attribuiti a una visita generata dalle inserzioni esterne di Etsy. La percentuale dipende dalle regole e dalla soglia di vendite del negozio.</p></details><details><summary>Salvate i miei prezzi?</summary><p>No. Il calcolo viene eseguito localmente nel browser e non richiede account o invio dei dati.</p></details></div></section>
+    <section class="monetize" id="resources" hidden><div><span class="eyebrow">Risorse per venditori</span><h2>Strumenti utili per il tuo negozio</h2><div id="affiliateLinks"></div></div></section>
+  </main>
+  <footer><a class="brand" href="index.html">margine<span class="brand-light">etsy</span></a><span>Uno strumento indipendente. Etsy è un marchio di Etsy, Inc.</span><div><a href="privacy.html">Privacy</a><a href="disclosure.html">Trasparenza</a></div></footer>
+  <script src="config.js"></script><script src="calculator.js"></script><script src="app.js"></script>
+</body>
+</html>
