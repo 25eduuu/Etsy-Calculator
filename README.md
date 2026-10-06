@@ -19,6 +19,8 @@ Il progetto è composto da file statici ed è adatto a Cloudflare Pages, GitHub 
 ## Ricavi già predisposti
 
 - `config.js` accetta link affiliati; la sezione resta nascosta finché non vengono configurati.
+- `ads.txt` contiene il publisher ID fornito per l'autorizzazione AdSense. Deve essere pubblicato nella root del dominio e visibile a `https://etsy-calculator-nine.vercel.app/ads.txt`.
+- Il file `ads.txt` autorizza la vendita dell'inventario ma non attiva gli annunci: serve anche la revisione AdSense del sito e la CMP/Privacy & messaging configurata per il pubblico europeo.
 - L'opzione più coerente è un'affiliazione a un software per venditori Etsy, per esempio eRank o Alura. I rispettivi programmi pubblicano commissioni ricorrenti sui siti ufficiali, ma richiedono registrazione e possono richiedere approvazione. Aggiungi i link di tracciamento solo dopo l'accettazione; disclosure e `rel=sponsored` sono già predisposti.
 - Non sono stati attivati annunci né creati link di checkout: richiedono account e consenso privacy/IVA adeguati. L'affiliazione è il percorso iniziale più semplice e privo di costi fissi.
 - Un progetto nuovo non genera traffico o entrate automaticamente. La strada iniziale è SEO organica attraverso il tool gratuito e contenuti utili, senza pubblicazione automatica o spam. Distribuzione esterna richiede account, approvazioni o un dominio che il gestore deve fornire.

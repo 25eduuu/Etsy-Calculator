@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://etsy-calculator-nine.vercel.app/sitemap.xml
